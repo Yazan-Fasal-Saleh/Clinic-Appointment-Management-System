@@ -1,0 +1,334 @@
+﻿/* ------------------------------
+   إعدادات الألوان العامة
+------------------------------ */
+:root {
+    --bg: #eef2f7;
+    --sidebar-bg: #ffffffcc;
+    --card-bg: #ffffffcc;
+    --text: #1a1a1a;
+    --primary: #3b7bff;
+    --primary-dark: #2a5ed6;
+    --shadow: 0 8px 25px rgba(0,0,0,0.08);
+    --glass: rgba(255,255,255,0.55);
+    --border: rgba(255,255,255,0.35);
+}
+
+/* الوضع الليلي */
+.dark {
+    --bg: #1c1c1c;
+    --sidebar-bg: #2a2a2acc;
+    --card-bg: #2a2a2acc;
+    --text: #f1f1f1;
+    --primary: #6a9cff;
+    --border: rgba(255,255,255,0.15);
+}
+
+/* ------------------------------
+   تنسيق عام
+------------------------------ */
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Cairo", Tahoma, sans-serif;
+    display: flex;
+    transition: 0.3s;
+}
+
+/* ------------------------------
+   زر القائمة للجوال
+------------------------------ */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 22px;
+    z-index: 999;
+    box-shadow: var(--shadow);
+}
+
+/* ------------------------------
+   الشريط الجانبي
+------------------------------ */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(18px);
+    border-left: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    padding: 25px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: 0.3s;
+}
+
+.sidebar .logo {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 14px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: var(--text);
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: 0.25s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: var(--primary);
+    color: #fff;
+    transform: translateX(-5px);
+}
+
+.theme-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.25s;
+}
+
+.theme-btn:hover {
+    background: var(--primary-dark);
+}
+
+/* ------------------------------
+   المحتوى الرئيسي
+------------------------------ */
+.main-content {
+    margin-right: 280px;
+    padding: 25px;
+    width: calc(100% - 280px);
+    transition: 0.3s;
+}
+
+/* ------------------------------
+   رأس الصفحة
+------------------------------ */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.top-header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.search-box {
+    padding: 12px;
+    width: 260px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    background: #fff;
+    transition: 0.25s;
+}
+
+.search-box:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(59,123,255,0.25);
+}
+
+/* ------------------------------
+   بطاقات الإحصائيات
+------------------------------ */
+.stats {
+    display: flex;
+    gap: 20px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(18px);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    width: 220px;
+    text-align: center;
+    transition: 0.25s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ------------------------------
+   البطاقات العامة
+------------------------------ */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(18px);
+    border: 1px solid var(--border);
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+/* ------------------------------
+   النموذج
+------------------------------ */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    background: #fff;
+    transition: 0.25s;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(59,123,255,0.25);
+}
+
+/* زر الحجز */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: 0.25s;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+/* ------------------------------
+   جدول المواعيد
+------------------------------ */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+.appointments-table th,
+.appointments-table td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.appointments-table tr:hover {
+    background: rgba(59,123,255,0.08);
+}
+
+/* أزرار الجدول */
+.btn-danger {
+    background: #ffe6e6;
+    color: #d9534f;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: none;
+}
+
+.btn-secondary {
+    background: #e6f0ff;
+    color: var(--primary);
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* أزرار التصدير */
+.export-btn {
+    padding: 12px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    margin-left: 10px;
+}
+
+/* ------------------------------
+   الاستجابة للشاشات الصغيرة
+------------------------------ */
+@media (max-width: 900px) {
+    .main-content {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .sidebar {
+        right: -280px;
+    }
+
+    .sidebar.open {
+        right: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .top-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-box {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .stats {
+        justify-content: center;
+    }
+
+    .stat-card {
+        width: 100%;
+    }
+}

@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>نظام مواعيد العيادة المتطور</title>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <!-- زر القائمة للجوال -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <!-- الشريط الجانبي -->
+    <aside class="sidebar" id="sidebar">
+        <h2 class="logo">عيادتي</h2>
+        <nav>
+            <a href="#" class="active">📅 المواعيد</a>
+            <a href="#">👨‍⚕️ الأطباء</a>
+            <a href="#">🧾 السجلات</a>
+            <a href="#">⚙️ الإعدادات</a>
+        </nav>
+
+        <button id="themeToggle" class="theme-btn">🌙 الوضع الليلي</button>
+    </aside>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="main-content">
+
+        <header class="top-header">
+            <h1>نظام إدارة مواعيد العيادة</h1>
+            <input type="text" id="searchInput" placeholder="بحث عن موعد..." class="search-box">
+        </header>
+
+        <section class="stats">
+            <div class="stat-card">
+                <h3>مواعيد اليوم</h3>
+                <p id="todayCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>مواعيد هذا الأسبوع</h3>
+                <p id="weekCount">0</p>
+            </div>
+        </section>
+
+        <!-- نموذج إضافة موعد -->
+        <section class="card">
+            <h2>حجز موعد جديد</h2>
+
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <label>اسم المريض</label>
+                    <input type="text" id="patientName" required>
+                </div>
+
+                <div class="form-group">
+                    <label>رقم الجوال</label>
+                    <input type="tel" id="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label>التخصص</label>
+                    <select id="department" required>
+                        <option value="">اختر التخصص</option>
+                        <option value="باطنية">باطنية</option>
+                        <option value="أسنان">أسنان</option>
+                        <option value="أطفال">أطفال</option>
+                        <option value="جلدية">جلدية</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>تاريخ الموعد</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label>وقت الموعد</label>
+                    <input type="time" id="time" required>
+                </div>
+
+                <button type="submit" class="btn-primary">حجز الموعد</button>
+            </form>
+
+            <p id="errorMessage" class="error-message"></p>
+            <p id="successMessage" class="success-message"></p>
+        </section>
+
+        <!-- جدول المواعيد -->
+        <section class="card">
+            <h2>المواعيد المحجوزة</h2>
+
+            <div class="table-actions">
+                <button class="export-btn" onclick="exportExcel()">📤 تصدير Excel</button>
+                <button class="export-btn" onclick="window.print()">🖨️ طباعة</button>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="appointments-table">
+                    <thead>
+                        <tr>
+                            <th>اسم المريض</th>
+                            <th>الجوال</th>
+                            <th>التخصص</th>
+                            <th>التاريخ</th>
+                            <th>الوقت</th>
+                            <th>إدارة</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appointmentsBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="JavaScript1.js"></script>
+
+    <script>
+        // إظهار وإخفاء القائمة للجوال
+        document.getElementById("menuToggle").onclick = () => {
+            document.getElementById("sidebar").classList.toggle("open");
+        };
+    </script>
+
+</body>
+</html>
