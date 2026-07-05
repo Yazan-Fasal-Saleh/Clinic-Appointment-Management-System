@@ -197,6 +197,7 @@ body.dark .card {
         right: 0;
         height: 100%;
         transform: translateX(100%);
+        z-index: 999;
     }
 
     .sidebar.open {
@@ -214,5 +215,9 @@ body.dark .card {
 
     .search-box {
         width: 100%;
+    }
+
+    .main-content {
+        padding: 15px;
     }
 }
